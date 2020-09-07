@@ -1,0 +1,79 @@
+gpl,title,Nstudios,GSEIDs,SYMBOL,ENTREZ,ENSEMBL,GENENAME
+GPL570,[HG-U133_Plus_2] Affymetrix Human Genome U133 Plus 2.0 Array,37,"GSE18391,GSE19238,GSE26626,GSE12843,GSE124226,GSE98421,GSE37896,GSE17090,GSE9624,GSE66084,GSE120196,GSE61302,GSE27657,GSE20033,GSE71416,GSE133346,GSE88837,GSE27949,GSE28005,GSE27951,GSE115799,GSE13506,GSE26339,GSE39117,GSE39118,GSE43346,GSE17170,GSE99316,GSE66159,GSE41168,GSE66162,GSE3526,GSE34200,GSE13070,GSE27916,GSE17312,GSE2109",1,1,0,0
+GPL6244,[HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array [transcript (gene) version],15,"GSE56635,GSE59325,GSE54280,GSE38792,GSE73655,GSE34302,GSE37324,GSE33070,GSE20571,GSE70529,GSE62832,GSE25910,GSE41223,GSE25401,GSE25402",gene_assignment,0,gene_assignment,0
+GPL10558,Illumina HumanHT-12 V4.0 expression beadchip,14,"GSE133803,GSE42523,GSE130393,GSE48774,GSE73108,GSE55695,GSE42809,GSE42560,GSE115645,GSE72158,GSE119717,GSE65221,GSE58559,GSE53081",1,1,0,0
+GPL6947,Illumina HumanHT-12 V3.0 expression beadchip,12,"GSE29231,GSE29226,GSE23506,GSE112307,GSE22651,GSE27121,GSE43471,GSE22070,GSE27666,GSE32512,GSE30652,GSE30654",1,1,0,0
+GPL11532,[HuGene-1_1-st] Affymetrix Human Gene 1.1 ST Array [transcript (gene) version],9,"GSE136778,GSE67297,GSE42432,GSE87382,GSE76003,GSE43642,GSE56716,GSE77962,GSE61256",gene_assignment,0,gene_assignment,0
+GPL4133,Agilent-014850 Whole Human Genome Microarray 4x44K G4112F (Feature Number version),9,"GSE14982,GSE47511,GSE32026,GSE17992,GSE28073,GSE47513,GSE24883,GSE19494,GSE62117",1,1,1,1
+GPL6480,Agilent-014850 Whole Human Genome Microarray 4x44K G4112F (Probe Name version),7,"GSE42650,GSE20014,GSE39250,GSE30133,GSE40234,GSE32923,GSE34200",1,1,1,1
+GPL14550,Agilent-028004 SurePrint G3 Human GE 8x60K Microarray (Probe Name Version),6,"GSE55526,GSE37660,GSE46353,GSE38947,GSE50206,GSE62199",1,1,1,1
+GPL96,[HG-U133A] Affymetrix Human Genome U133A Array,6,"GSE590,GSE37215,GSE19811,GSE5090,GSE43346,GSE99316",1,1,0,0
+GPL15362,NuGO array (human) NuGO_Hs1a520180 [CDF: Hs_ENTREZG_14],5,"GSE36839,GSE43264,GSE43266,GSE36841,GSE43322",0,1,0,0
+GPL17586,[HTA-2_0] - Affymetrix GeneChip HTA-2_0 - Gene Level - HTA-2_0.r1.Psrs.mps probesets,4,"GSE133786,GSE108511,GSE80654,GSE113823",gene_assignment,0,gene_assignment,0
+GPL1456,RNG-MRC_HU25k_NICE,3,"GSE12793,GSE12894,GSE12895",1,0,0,0
+GPL17692,[HuGene-2_1-st] Affymetrix Human Gene 2.1 ST Array [transcript (gene) version],3,"GSE95777,GSE128949,GSE55200",gene_assignment,0,gene_assignment,0
+GPL19109,[HG-U133_Plus_2] Affymetrix Human Genome U133 Plus 2.0 Array [CDF: Brainarray HGU133Plus2_Hs_ENTREZG_v18],3,"GSE92405,GSE103766,GSE103769",0,1,0,0
+GPL201,[HG-Focus] Affymetrix Human HG-Focus Target Array,3,"GSE12399,GSE18201,GSE8954",1,1,0,0
+GPL4372,Rosetta/Merck Human 44k 1.1 microarray,3,"GSE24297,GSE24294,GSE24335",1,1,0,0
+GPL5175,[HuEx-1_0-st] Affymetrix Human Exon 1.0 ST Array [transcript (gene) version],3,"GSE18698,GSE42902,GSE42245",gene_assignment,0,gene_assignment,0
+GPL6884,Illumina HumanWG-6 v3.0 expression beadchip,3,"GSE48772,GSE48774,GSE20536",1,1,0,0
+GPL13607,Agilent-028004 SurePrint G3 Human GE 8x60K Microarray (Feature Number version),2,"GSE66921,GSE89455",0,0,0,1
+GPL16699,Agilent-039494 SurePrint G3 Human GE v2 8x60K Microarray 039381,2,"GSE84599,GSE139352",1,0,1,1
+GPL23126,[Clariom_D_Human] Affymetrix Human Clariom D Assay [transcript (gene) version],2,"GSE113080,GSE126963",gene_assignment,0,gene_assignment,0
+GPL3991,Human 3.0 A1,2,"GSE10545,GSE7965",1,0,0,0
+GPL6826,Rosetta/Merck DT_Phase2_1_of_17 microarray,2,"GSE16546,GSE11863",1,1,1,1
+GPL6827,Rosetta/Merck DT_Phase2_2_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6828,Rosetta/Merck DT_Phase2_3_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6829,Rosetta/Merck DT_Phase2_4_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6830,Rosetta/Merck DT_Phase2_5_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6831,Rosetta/Merck DT_Phase2_6_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6832,Rosetta/Merck DT_Phase2_7_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6833,Rosetta/Merck DT_Phase2_8_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6834,Rosetta/Merck DT_Phase2_9_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6835,Rosetta/Merck DT_Phase2_10_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6836,Rosetta/Merck DT_Phase2_11_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6837,Rosetta/Merck DT_Phase2_12_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6838,Rosetta/Merck DT_Phase2_13_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6839,Rosetta/Merck DT_Phase2_14_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6840,Rosetta/Merck DT_Phase2_15_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6841,Rosetta/Merck DT_Phase2_16_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL6842,Rosetta/Merck DT_Phase2_17_of_17 microarray,2,"GSE16546,GSE11863",1,1,0,0
+GPL7020,NuGO array (human) NuGO_Hs1a520180,2,"GSE28070,GSE14954",1,1,1,1
+GPL7363,Illumina HumanWG-6_V2_0_R2,2,"GSE17053,GSE19795",1,1,0,0
+GPL7408,Nimblegen HG18 RefSeq promoter array,2,"GSE17053,GSE19795",1,0,0,0
+GPL97,[HG-U133B] Affymetrix Human Genome U133B Array,2,"GSE43346,GSE99316",1,1,0,0
+GPL10332,Agilent-026652 Whole Human Genome Microarray 4x44K v2 (Feature Number version),1,GSE95624,1,0,1,0
+GPL10335,Affymetrix Human Genome U133 Plus 2.0 Array [CDF from AffyProbeMiner],1,GSE35411,0,0,0,1
+GPL13667,[HG-U219] Affymetrix Human Genome U219 Array,1,GSE70353,1,1,1,0
+GPL15207,[PrimeView] Affymetrix Human Gene Expression Array,1,GSE87160,1,1,1,0
+GPL15331,Agilent-026817 University_Surrey_HumanSleep_44k_v1,1,GSE87761,1,0,1,1
+GPL16043,GeneChip® PrimeView™ Human Gene Expression Array (with External spike-in RNAs),1,GSE94667,1,1,1,0
+GPL16522,[HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array [HuGene10stv1_Hs_ENTREZG_15.1.0],1,GSE122721,0,1,0,0
+GPL16977,[HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array [HuGene11stv1_Hs_ENSG version 14.1.0],1,GSE45878,0,0,1,0
+GPL17077,Agilent-039494 SurePrint G3 Human GE v2 8x60K Microarray 039381 (Probe Name version),1,GSE63754,1,0,1,1
+GPL20843,[HuEx-1_0-st] Affymetrix Human Exon 1.0 ST Array [CDF: genemapperhumanexon1.0cdf_3.0],1,GSE72332,0,0,1,0
+GPL2986,ABI Human Genome Survey Microarray Version 2,1,GSE16415,1,0,0,1
+GPL4044,CodeLink UniSet Human 20K I Bioarray,1,GSE15524,Description,0,0,0
+GPL4091,Agilent-014693 Human Genome CGH Microarray 244A (Feature number version),1,GSE34200,1,0,0,1
+GPL571,[HG-U133A_2] Affymetrix Human Genome U133A 2.0 Array,1,GSE37215,1,1,0,0
+GPL6097,Illumina human-6 v1.0 expression beadchip,1,GSE123685,1,0,0,0
+GPL6848,Agilent-012391 Whole Human Genome Oligo Microarray G4112A (Probe Name version),1,GSE40589,1,1,1,1
+GPL6883,Illumina HumanRef-8 v3.0 expression beadchip,1,GSE26168,1,1,0,0
+GPL7034,INSERM-Agilent-012391 Whole Human Genome Oligo Microarray G4112A,1,GSE12050,1,1,1,1
+GPL7038,INSERM-Agilent-014850 Whole Human Genome Microarray 4x44K (G4112F),1,GSE12050,1,1,1,1
+GPL7350,Aalborg University Illumina human-6 v2.0 expression beadchip,1,GSE12884,1,0,0,0
+GPL8300,[HG_U95Av2] Affymetrix Human Genome U95 Version 2 Array,1,GSE51625,1,1,0,0
+GPL8619,Rosetta/Merck Human P3 Array1,1,GSE16546,1,1,0,0
+GPL8628,Rosetta/Merck Human P3 Array2,1,GSE16546,1,1,0,0
+GPL8629,Rosetta/Merck Human P3 Array3,1,GSE16546,1,1,0,0
+GPL8630,Rosetta/Merck Human P3 Array4,1,GSE16546,1,1,0,0
+GPL8631,Rosetta/Merck Human P3 Array5,1,GSE16546,1,1,0,0
+GPL8632,Rosetta/Merck Human P3 Array6,1,GSE16546,1,1,0,0
+GPL8660,Rosetta/Merck Human P4 Array1,1,GSE16546,1,1,0,0
+GPL8661,Rosetta/Merck Human P4 Array2,1,GSE16546,1,1,0,0
+GPL8662,Rosetta/Merck Human P4 Array3,1,GSE16546,1,1,0,0
+GPL91,[HG_U95A] Affymetrix Human Genome U95A Array,1,GSE51625,1,1,0,0
+GPL92,[HG_U95B] Affymetrix Human Genome U95B Array,1,GSE51625,1,1,0,0
+GPL93,[HG_U95C] Affymetrix Human Genome U95C Array,1,GSE51625,1,1,0,0
+GPL94,[HG_U95D] Affymetrix Human Genome U95D Array,1,GSE51625,1,1,0,0
+GPL95,[HG_U95E] Affymetrix Human Genome U95E Array,1,GSE51625,1,1,0,0

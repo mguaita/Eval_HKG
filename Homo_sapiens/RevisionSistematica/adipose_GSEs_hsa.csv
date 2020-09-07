@@ -1,0 +1,188 @@
+GSEID,GPL,Study_type
+GSE87160,GPL15207,Expression profiling by array
+GSE55526,GPL14550,Expression profiling by array
+GSE42650,GPL6480,Expression profiling by array
+GSE18391,GPL570,Expression profiling by array
+GSE19238,GPL570,Expression profiling by array
+GSE48772,GPL6884,Expression profiling by array
+GSE37660,GPL14550,Expression profiling by array
+GSE26626,GPL570,Expression profiling by array
+GSE12843,GPL570,Expression profiling by array
+GSE12399,GPL201,Expression profiling by array
+GSE133803,GPL10558,Expression profiling by array
+GSE122721,GPL16522,Expression profiling by array
+GSE12793,GPL1456,Expression profiling by array
+GSE112216,GPL16686,Expression profiling by array
+GSE63754,GPL17077,Expression profiling by array
+GSE42523,GPL10558,Expression profiling by array
+GSE46353,GPL14550,Expression profiling by array
+GSE20014,GPL6480,Expression profiling by array
+GSE18201,GPL201,Expression profiling by array
+GSE14982,GPL4133,Expression profiling by array
+GSE130393,GPL10558,Expression profiling by array
+GSE124226,GPL570,Expression profiling by array
+GSE104815,GPL21827,Non-coding RNA profiling by array; Expression profiling by array
+GSE89330,GPL16956,Expression profiling by array; Non-coding RNA profiling by array
+GSE98421,GPL570,Expression profiling by array
+GSE66921,GPL13607,Expression profiling by array
+GSE39250,GPL6480,Expression profiling by array
+GSE37896,GPL570,Expression profiling by array
+GSE30133,GPL6480,Expression profiling by array
+GSE61113,GPL16686,Expression profiling by array
+GSE56635,GPL6246;GPL6244,Expression profiling by array
+GSE18698,GPL5175,Expression profiling by array
+GSE95777,GPL17692,Expression profiling by array
+GSE59325,GPL6244,Expression profiling by array
+GSE36839,GPL15362,Expression profiling by array
+GSE17090,GPL570,Expression profiling by array
+GSE16415,GPL2986,Expression profiling by array
+GSE590,GPL96,Expression profiling by array
+GSE133786,GPL17586,Expression profiling by array
+GSE136778,GPL11532,Expression profiling by array
+GSE128949,GPL17692,Expression profiling by array
+GSE8954,GPL201,Expression profiling by array
+GSE9624,GPL570,Expression profiling by array
+GSE66084,GPL570,Expression profiling by array
+GSE48774,GPL6884;GPL10558,Expression profiling by array
+GSE73108,GPL10558,Expression profiling by array
+GSE55695,GPL10558,Expression profiling by array
+GSE54280,GPL6244,Expression profiling by array
+GSE42809,GPL10558,Expression profiling by array
+GSE37215,GPL96;GPL571,Expression profiling by array
+GSE20536,GPL6884,Expression profiling by array
+GSE19811,GPL96,Expression profiling by array
+GSE120196,GPL570,Expression profiling by array
+GSE12894,GPL1456,Expression profiling by array
+GSE67297,GPL11532,Expression profiling by array
+GSE72332,GPL20843,Expression profiling by array
+GSE61302,GPL570,Expression profiling by array
+GSE38947,GPL14550,Expression profiling by array
+GSE43264,GPL15362,Expression profiling by array
+GSE124935,GPL16686,Expression profiling by array
+GSE84599,GPL16699,Expression profiling by array
+GSE42902,GPL5175,Expression profiling by array
+GSE43266,GPL15362,Expression profiling by array
+GSE40551,GPL16022,Expression profiling by array
+GSE28070,GPL7020,Expression profiling by array
+GSE5090,GPL96,Expression profiling by array
+GSE123685,GPL6097,Expression profiling by array
+GSE108511,GPL17586,Expression profiling by array
+GSE42432,GPL11532,Expression profiling by array
+GSE27657,GPL570,Expression profiling by array
+GSE38792,GPL6244,Expression profiling by array
+GSE17053,GPL7408;GPL7363,Genome binding/occupancy profiling by genome tiling array; Methylation profiling by genome tiling array; Expression profiling by array
+GSE20033,GPL570,Expression profiling by array; Third-party reanalysis
+GSE12895,GPL1456,Expression profiling by array
+GSE73655,GPL6244,Expression profiling by array
+GSE71416,GPL570,Expression profiling by array
+GSE47511,GPL4133,Expression profiling by array
+GSE36841,GPL15362,Expression profiling by array
+GSE34302,GPL6244,Expression profiling by array
+GSE117353,GPL16791;GPL1261,Expression profiling by array; Expression profiling by high throughput sequencing
+GSE55200,GPL17692,Expression profiling by array
+GSE42560,GPL10558;GPL15802,Expression profiling by array; Genome binding/occupancy profiling by genome tiling array; Methylation profiling by genome tiling array
+GSE19795,GPL7408;GPL7363,Expression profiling by array; Methylation profiling by genome tiling array
+GSE139352,GPL16699,Expression profiling by array
+GSE133346,GPL570,Expression profiling by array
+GSE115645,GPL10558,Expression profiling by array
+GSE87382,GPL11532,Expression profiling by array
+GSE29231,GPL6947,Expression profiling by array
+GSE29226,GPL6947,Expression profiling by array
+GSE32026,GPL4133,Expression profiling by array
+GSE17060,GPL6101;GPL8843,Expression profiling by array; Non-coding RNA profiling by array
+GSE37324,GPL6244,Expression profiling by array
+GSE33070,GPL6244,Expression profiling by array
+GSE35411,GPL10335,Expression profiling by array
+GSE17992,GPL4133,Expression profiling by array
+GSE20571,GPL6244,Expression profiling by array
+GSE28073,GPL4133,Expression profiling by array
+GSE15524,GPL4044,Expression profiling by array
+GSE12884,GPL7350,Expression profiling by array
+GSE102524,GPL16956,Expression profiling by array
+GSE88837,GPL570,Expression profiling by array
+GSE43322,GPL15362,Expression profiling by array
+GSE77532,GPL16686,Expression profiling by array
+GSE53376,GPL16686,Expression profiling by array
+GSE47513,GPL4133;GPL13534,Expression profiling by array; Methylation profiling by genome tiling array
+GSE87761,GPL15331,Expression profiling by array
+GSE27949,GPL570,Expression profiling by array
+GSE94667,GPL16043,Expression profiling by array
+GSE70529,GPL6244,Expression profiling by array
+GSE62832,GPL6244,Expression profiling by array
+GSE25910,GPL6244,Expression profiling by array
+GSE23506,GPL6947,Expression profiling by array
+GSE12050,GPL7034;GPL7038,Expression profiling by array
+GSE113080,GPL23126,Expression profiling by array
+GSE28005,GPL570,Expression profiling by array
+GSE14954,GPL7020,Expression profiling by array
+GSE95624,GPL10332,Expression profiling by array
+GSE14938,GPL8217,Expression profiling by array
+GSE41223,GPL6244;GPL8786,Expression profiling by array; Non-coding RNA profiling by array
+GSE27951,GPL13273;GPL570,Non-coding RNA profiling by array; Expression profiling by array
+GSE115799,GPL570,Expression profiling by array
+GSE13506,GPL570,Expression profiling by array
+GSE26339,GPL570,Expression profiling by array
+GSE80654,GPL17586,Expression profiling by array
+GSE92405,GPL19109,Expression profiling by array
+GSE112307,GPL6947,Expression profiling by array
+GSE39117,GPL570,Expression profiling by array
+GSE25401,GPL6244,Expression profiling by array
+GSE103766,GPL19109,Expression profiling by array
+GSE113823,GPL17586;GPL13112,Expression profiling by array; Expression profiling by high throughput sequencing
+GSE42245,GPL5175,Expression profiling by array
+GSE26168,GPL10322;GPL6883,Expression profiling by array; Non-coding RNA profiling by array
+GSE39118,GPL570;GPL11154,Expression profiling by array; Non-coding RNA profiling by high throughput sequencing
+GSE40234,GPL6480,Expression profiling by array
+GSE53378,GPL16686;GPL16384,Expression profiling by array; Non-coding RNA profiling by array
+GSE24883,GPL4133,Expression profiling by array
+GSE22651,GPL6947,Expression profiling by array
+GSE76003,GPL11532,Expression profiling by array
+GSE43346,GPL96;GPL97;GPL570,Expression profiling by array
+GSE27121,GPL6947,Expression profiling by array
+GSE17170,GPL570,Expression profiling by array
+GSE43642,GPL11532,Expression profiling by array
+GSE99316,GPL96;GPL97;GPL570;GPL10999,Expression profiling by array; Genome binding/occupancy profiling by high throughput sequencing
+GSE66159,GPL570,Expression profiling by array
+GSE101492,GPL20265,Expression profiling by array
+GSE72158,GPL10558,Expression profiling by array
+GSE19494,GPL4133,Expression profiling by array
+GSE43471,GPL6947,Expression profiling by array
+GSE40589,GPL6848,Expression profiling by array
+GSE62117,GPL4133,Expression profiling by array
+GSE126963,GPL23126,Expression profiling by array
+GSE56716,GPL11532,Expression profiling by array
+GSE103769,GPL19109;GPL13534,Expression profiling by array; Methylation profiling by genome tiling array
+GSE119717,GPL10558,Expression profiling by array
+GSE51625,GPL91;GPL92;GPL93;GPL94;GPL95;GPL8300,Expression profiling by array
+GSE65221,GPL10558,Expression profiling by array
+GSE41168,GPL570,Expression profiling by array
+GSE22070,GPL6947,Expression profiling by array
+GSE25402,GPL6244;GPL8786,Methylation profiling by array; Expression profiling by array; Non-coding RNA profiling by array
+GSE66162,GPL570,Expression profiling by array
+GSE77962,GPL11532,Expression profiling by array
+GSE10545,GPL3991,Expression profiling by array
+GSE89455,GPL13607,Expression profiling by array
+GSE58559,GPL10558,Expression profiling by array
+GSE27666,GPL6947,Expression profiling by array
+GSE50206,GPL14550;GPL10787,Expression profiling by array
+GSE62199,GPL14550,Expression profiling by array
+GSE32512,GPL6947,Expression profiling by array
+GSE53081,GPL10558;GPL10999;GPL11154,Expression profiling by array; Expression profiling by high throughput sequencing
+GSE32923,GPL6480,Expression profiling by array
+GSE30652,GPL6947,Expression profiling by array
+GSE61256,GPL13534;GPL11532,Methylation profiling by array; Expression profiling by array
+GSE3526,GPL570,Expression profiling by array
+GSE34200,GPL570;GPL4091;GPL6480,Expression profiling by array; Non-coding RNA profiling by array; Methylation profiling by array; Genome variation profiling by SNP array; SNP genotyping by SNP array
+GSE13070,GPL570,Expression profiling by array
+GSE27916,GPL570,Expression profiling by array
+GSE16546,GPL6826;GPL6827;GPL6828;GPL6829;GPL6830;GPL6831;GPL6832;GPL6833;GPL6834;GPL6835;GPL6836;GPL6837;GPL6838;GPL6839;GPL6840;GPL6841;GPL6842;GPL8619;GPL8628;GPL8629;GPL8630;GPL8631;GPL8632;GPL8660;GPL8661;GPL8662,Expression profiling by array #ROSETTA
+GSE17312,GPL570;GPL9115;GPL10999;GPL11154,Genome binding/occupancy profiling by high throughput sequencing; Expression profiling by array
+GSE30654,GPL6947;GPL8490;GPL13534,Expression profiling by array; Methylation profiling by array
+GSE24297,GPL4372,Expression profiling by array
+GSE70353,GPL13667,Expression profiling by array
+GSE11863,GPL6826;GPL6827;GPL6828;GPL6829;GPL6830;GPL6831;GPL6832;GPL6833;GPL6834;GPL6835;GPL6836;GPL6837;GPL6838;GPL6839;GPL6840;GPL6841;GPL6842,Expression profiling by array # ROSETTA
+GSE45878,GPL16977,Expression profiling by array
+GSE24294,GPL4372,Expression profiling by array
+GSE7965,GPL3991,Expression profiling by array
+GSE2109,GPL570,Expression profiling by array
+GSE24335,GPL4372,Expression profiling by array
