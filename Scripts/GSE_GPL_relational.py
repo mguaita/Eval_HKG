@@ -40,7 +40,7 @@ with open('adipose_GSEs.txt') as f:
         input('ENTER')
         i+=1
 
-f_out = open('gse_gpl_relational.txt', 'w')
+f_out = open('gse_gpl_relational.csv', 'w')
 for j in range(len(col_GSEIDs)):
     gseid = col_GSEIDs[j]
     gpl = col_GPLs[j]
