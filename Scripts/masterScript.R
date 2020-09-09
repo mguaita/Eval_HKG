@@ -858,26 +858,3 @@ for (g in 1:length(GPLs)){
 
 
 
-
-
-
-
-
-
-#############################################################################3
-### OPCION ANTIGUA LENTA #####
-GPLID = "GPL6947"
-# Definimos el numero maximo de genes que somos capaces de identificar:
-nMAXGENES = 25159
-# Definimos el parametro a procesar: "CV", "IQRmedian", "MADmedian"
-parametros = c("CV", "IQRmedian", "MADmedian")
-for (i in 1:length(parametros)) {
-  PAR = parametros[i]
-  print(PAR)
-  final_res = get_finalResult(GPLID, GSEIDs, indicadorMT, adiGSMs, PAR, nMAXGENES)
-}
-
-writeOutput(final_res,GPLID)
-#############################################################################
-
-
