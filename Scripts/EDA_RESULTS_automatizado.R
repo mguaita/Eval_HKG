@@ -1,4 +1,6 @@
-#LIBRERIAS
+###################################
+#   EDA RESULTS AUTOAMTIZADO      #
+###################################
 library(readr)
 library(dplyr)
 
@@ -43,16 +45,16 @@ for (s in 1:length(SEXOS)){
     ### LECTURA FICHEROS:
     print("Lectura de ficheros.")
     if (SEX == "ALL"){
-    GPL570 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL570_",stat,".csv"), header = TRUE, row.names = 1)
-    GPL6244 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL6244_",stat,".csv"), header = TRUE, row.names = 1)
-    GPL10558 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL10558_",stat,".csv"), header = TRUE, row.names = 1)
-    GPL6947 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL6947_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL570 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL570_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL6244 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL6244_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL10558 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL10558_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL6947 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL6947_",stat,".csv"), header = TRUE, row.names = 1)
     }
     if (SEX != "ALL"){
-    GPL570 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL570_",stat,".csv"), header = TRUE, row.names = 1)
-    GPL6244 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL6244_",stat,".csv"), header = TRUE, row.names = 1)
-    GPL10558 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL10558_",stat,".csv"), header = TRUE, row.names = 1)
-    GPL6947 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL6947_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL570 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL570_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL6244 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL6244_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL10558 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL10558_",stat,".csv"), header = TRUE, row.names = 1)
+      GPL6947 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/",SEX,"_GPL6947_",stat,".csv"), header = TRUE, row.names = 1)
     }
     ## PARTE 1: RANKING HOUSEKEEPING GENES
     #### PARA LOS VALORES DE LOS HKGS EN TODOS LOS ESTUDIOS:
@@ -65,10 +67,10 @@ for (s in 1:length(SEXOS)){
     
     print("Interrogando plataformas...")
     GPLs = c("GPL570", "GPL6244", "GPL10558", "GPL6947")
-    HKGs = c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19", "RNA18S","RNA18S5", "RNA18SN5")
+    HKGs = c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19", "RNA18S5")
     for (i in 1:length(HKGs)){
       HKG = HKGs[i]
-      if (HKG != "RNA18S" && HKG != "RNA18S5" && HKG !="RNA18SN5"){
+      if (HKG != "RNA18S5"){
         for (j in 1:length(GPLs)){
           GPLID = GPLs[j]
           df = get(GPLID)  
@@ -83,34 +85,26 @@ for (s in 1:length(SEXOS)){
         else{all_HKG_df = rbind(all_HKG_df,HKG_df)}
         write.csv(all_HKG_df,paste0("./RESULTS_",stat,"/",SEX,"/HKG/5HKG_",stat,".csv"), row.names = TRUE)
       }
-      if (HKG == "RNA18S"){
-        GPLID = "GPL570"
-        df = get(GPLID)
-        df_aux = df[HKG,]
-        HKG_df = df_aux
-      }
       if (HKG == "RNA18S5"){
-        GPLID = "GPL6244"
-        df = get(GPLID)
-        df_aux = df[HKG,]
-        HKG_df = cbind(HKG_df, df_aux)
-      }
-      if (HKG == "RNA18SN5"){
-        GPLID = "GPL10558"
-        df = get(GPLID)
-        df_aux = df[HKG,]
-        HKG_df = cbind(HKG_df, df_aux)
-        write.csv(HKG_df,paste0("./RESULTS_",stat,"/",SEX,"/HKG/RNA18S_",stat,".csv"), row.names = TRUE)
-        ## Creamos el df aparte del gen RNA18S con los valores de 21 estudios:
-        RNA18S = HKG_df
-      }
+        GPLs_18S5 = c( "GPL6244", "GPL10558")
+        for (r in 1:length(GPLs_18S5)){
+          GPLID = GPLs_18S5[r]
+          df = get(GPLID)  
+          which(rownames(df) == HKG)
+          df_aux = df[HKG,]
+          if (r == 1){HKG_df = df_aux}
+          else {HKG_df = cbind(HKG_df, df_aux)}
+        }
+        write.csv(HKG_df,paste0("./RESULTS_",stat,"/",SEX,"/HKG/RNA18S5_",stat,".csv"), row.names = TRUE)
+        RNA18S5 = HKG_df
+        }
     }
     ## Calculamos los valores mediano, medio y sd 
     print("Calculando media, mediana y sd.")
     all_HKG_stats = add_HKGstats(all_HKG_df)
     all_HKG_medCV =  all_HKG_stats %>% select(median, mean, sd)
     
-    RNA18S_stats = add_HKGstats(RNA18S)
+    RNA18S_stats = add_HKGstats(RNA18S5)
     RNA18 = RNA18S_stats %>% select(median, mean, sd)
     
     ## Unimos los datos, ordenamos por la mediana y generamos el ranking:
@@ -160,7 +154,7 @@ for (s in 1:length(SEXOS)){
     ### PARTE 3: ¿En qué posición del ranking global se encuentran los HKGs?
     ### BUSCAMOS LAS POSICIONES DE LOS HKG
     GPLs = c("GPL570", "GPL6244", "GPL10558", "GPL6947")
-    nGenes = c(22881, 23307, 31426, 25159)
+    nGenes = c(22880, 23307, 31426, 25159)
     #HKGs = c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19")
     for (i in 1:length(GPLs)){
       GPLID = GPLs[i]
@@ -168,9 +162,10 @@ for (s in 1:length(SEXOS)){
       n = nGenes[i]
       text = paste0("\nplatform: ",GPLID," - ",n," genes\n______________________________________________________\n")
       cat(text)
-      df_aux = d %>% select(X,ranking, median, mean, sd) %>% filter(X %in% c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19", "RNA18S","RNA18S5", "RNA18SN5"))
+      df_aux = d %>% select(X,ranking, median, mean, sd) %>% filter(X %in% c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19", "RNA18S5"))
       print(df_aux)
       write.csv(df_aux,paste0("./RESULTS_",stat,"/",SEX,"/globalRank/",GPLID,"_positionHKG.csv"))
     }
-  }
+    }
+    
 }
