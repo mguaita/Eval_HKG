@@ -146,14 +146,14 @@ anotacion_gpl570 <- function(Eset, GSEMat){
   SYMBOLs = fData(Eset)$"Gene Symbol" # puede contener sinonimos
   
   ## ANOTACION SONDAS CONTROL:
-  PROBEIDs = rownames(GSEMat)
-  RNA18S_control_probes = c("AFFX-HUMRGE/M10098_3_at","AFFX-HUMRGE/M10098_5_at","AFFX-HUMRGE/M10098_M_at")
-  for (c in 1:length(RNA18S_control_probes)){
-    cProbe = RNA18S_control_probes[c]
-    # Anotamos el IDENTIFICADOR DEL RNA18S
-    SYMBOLs[which(PROBEIDs == cProbe)] = "RNA18S"
-  }
-  
+  # PROBEIDs = rownames(GSEMat)
+  # RNA18S_control_probes = c("AFFX-HUMRGE/M10098_3_at","AFFX-HUMRGE/M10098_5_at","AFFX-HUMRGE/M10098_M_at")
+  # for (c in 1:length(RNA18S_control_probes)){
+  #   cProbe = RNA18S_control_probes[c]
+  #   # Anotamos el IDENTIFICADOR DEL RNA18S
+  #   SYMBOLs[which(PROBEIDs == cProbe)] = "RNA18S"
+  # }
+  # 
   # Añadimos los identificadores a la matriz de expresión genica
   #GSEMat$SYMBOL = SYMBOLs # puede contener sinonimos
   # Antes de añadir la columna a la matriz nos quedamos con un identificador unico:
@@ -221,11 +221,11 @@ anotacion_gpl10558 <- function(Eset, GSEMat){# Mostramos la anotación disponibl
   # print(colnames(fData(Eset)))
   SYMBOLs = fData(Eset)$"Symbol"
   
-  # Corregimos anotación rRNA 18S - LOC100008588 (ILMN_3243593)
+  # # Corregimos anotación rRNA 18S - LOC100008588 (ILMN_3243593)
   RNA18S_LOC = 'LOC100008588'
   if (is.element(RNA18S_LOC, SYMBOLs) == TRUE){ # Si esta la sonda, anotamos
-    SYMBOLs[match(RNA18S_LOC, SYMBOLs)] = 'RNA18SN5'} # Empleamos match porque solo hay una ocurrencia de la sonda, 1st match
-  
+     SYMBOLs[match(RNA18S_LOC, SYMBOLs)] = 'RNA18S5'} # Empleamos match porque solo hay una ocurrencia de la sonda, 1st match
+   
   # Corregimos anotación de los meses:
   months = c("1-Dec","1-Mar","10-Mar","11-Mar","2-Mar","3-Mar","4-Mar","5-Mar","6-Mar","7-Mar","8-Mar","9-Mar")
   gen_correction = c("DEC1","MARCHF1","MARCHF10","MARCHF11","MARCHF2","MARCHF3","MARCHF4","MARCHF5","MARCHF6","MARCHF7","MARCHF8","MARCHF9")
@@ -279,12 +279,12 @@ anotacion_gpl1261 <- function(Eset, GSEMat){
   
   ## ANOTACION SONDAS CONTROL:
   PROBEIDs = rownames(GSEMat)
-  RNA18S_control_probes = c("AFFX-18SRNAMur/X00686_3_at","AFFX-18SRNAMur/X00686_5_at","AFFX-18SRNAMur/X00686_M_at")
-  for (c in 1:length(RNA18S_control_probes)){
-    cProbe = RNA18S_control_probes[c]
-    # Anotamos el IDENTIFICADOR DEL RNA18S
-    SYMBOLs[which(PROBEIDs == cProbe)] = "Rn18s"
-  }
+  # RNA18S_control_probes = c("AFFX-18SRNAMur/X00686_3_at","AFFX-18SRNAMur/X00686_5_at","AFFX-18SRNAMur/X00686_M_at")
+  # for (c in 1:length(RNA18S_control_probes)){
+  #   cProbe = RNA18S_control_probes[c]
+  #   # Anotamos el IDENTIFICADOR DEL RNA18S
+  #   SYMBOLs[which(PROBEIDs == cProbe)] = "Rn18s"
+  # }
   
   ## ANOTACION Ppia:
   SYMBOLs[which(PROBEIDs == "1417451_a_at")] = "Ppia"
@@ -354,7 +354,7 @@ anotacion_gpl6246 <- function(Eset, GSEMat){
 anotacion_gpl6887 <- function(Eset, GSEMat){
   ### CORREGIR los SYMBOLs con sinonimos
   # Mostramos la anotación disponible:	
- # print(colnames(fData(Eset)))
+  # print(colnames(fData(Eset)))
   SYMBOLs = fData(Eset)$"Symbol" # puede contener sinonimos
   
   processedSYMBOLs = c() # lista para almacenar los identificadores unicos
@@ -485,7 +485,7 @@ get_geneExpression <- function(GPLID, GSEID, Eset, MT, adipose_samples = "NA") {
   if (GPLID == "GPL6887"){GSEMat = anotacion_gpl6887(Eset, GSEMat)}
   if (GPLID == "GPL6885"){GSEMat = anotacion_gpl6885(Eset, GSEMat)}
   if (GPLID == "GPL16570"){GSEMat = anotacion_gpl16570(Eset, GSEMat)}
-
+  
   print("Annotated GSEMat")
   ###
   
@@ -557,7 +557,7 @@ getwrite_cleanGeneExpressionDF <- function(GPLID, GSEIDs, indicadorMT, adiGSMs){
   cat("Nº de genes unicos identificados:",nMAXGENES,"\n",
       "Estudio con más genes identificados:", GSE_nmax,"\n",
       "Gen expression data anotation done. See GSEdf directory.")
-
+  
 }
 
 geneExpressionDF_reader <- function(GPLID, GSEID){
@@ -612,16 +612,16 @@ geneExpressionDF_loopprocessing <- function(GPLID, GSEIDs, PAR, nMAXGENES){
     
     # B.- PRIMER ESTUDIO ES UN CASO ESPECIAL: 
     #if (i == 2 && dim(final_res)[1] != nMAXGENES) { # El primer df no tiene la longitud que toca, lo juntamos tal cual
-      ## Guardamos el 2do df, que es normal, como back up
-      # para luego hacer "outer join" con los dfs incompletos -> genes sin datos devuelven un NA
-      # res_bckp = res_PAR 
-      # Hacemos el join con un df normal para completar la información faltante con valores nulos NAs
-      # Por la función el df resultante tiene los genes en los nombres de las columnas
-      # con TRUE forzamos a incluir todas las filas
-      #final_res <- merge(res_PAR, final_res, by= "row.names", all= TRUE) 
-      
-      # Cambiamos el orden: GSE2 (sin NAs) | GSE1 (con NAs)
-      #}
+    ## Guardamos el 2do df, que es normal, como back up
+    # para luego hacer "outer join" con los dfs incompletos -> genes sin datos devuelven un NA
+    # res_bckp = res_PAR 
+    # Hacemos el join con un df normal para completar la información faltante con valores nulos NAs
+    # Por la función el df resultante tiene los genes en los nombres de las columnas
+    # con TRUE forzamos a incluir todas las filas
+    #final_res <- merge(res_PAR, final_res, by= "row.names", all= TRUE) 
+    
+    # Cambiamos el orden: GSE2 (sin NAs) | GSE1 (con NAs)
+    #}
     
     # SIGUIENTES ITERACIONES:
     if (i >= 2 && dim(res_PAR)[1] == nMAXGENES) { # Normativo, lo adjuntamos normal
@@ -694,7 +694,7 @@ aggregatebySYMBOL <- function(GSEMat, n_samples){
 get_CV <- function(GSEID, d, n_samples) { # dos casos A) dim(GSEMat)[1] == n_sondas, B) dim(GSEMat)[1] != n_sondas
   # Toma el dataframe de expresión génica  - las filas son genes, columnas las muestras
   # calcula la sd, media y el C.V por filas
-
+  
   ## PROCESAMIENTO PARA EL COEFICIENTE DE VARIACION: 
   # n_samples para no incluir en el procesamiento los valores añadidos
   ## IGNORAMOS LOS NAs
@@ -802,10 +802,10 @@ rm(adiGSMs,file, GPLID, indicadorMT, nMAXGENES, p, PAR, parametros)
 
 ## VERSION AUTOMATIZADA COMPLETA: para procesar todos los estudios de todas las plataformas:
 GPLs = c("GPL1261","GPL6246","GPL6887","GPL6885","GPL16570")
-nMG = c(21496,24213,30866,18120,24647)
+nMG = c(21495,24213,30866,18120,24647)
 
-GPLs  = c("GPL570", "GPL6244", "GPL10558", "GPL6947")
-nMG = c(22881,23307,31426,25159)
+GPLs  = c("GPL6244", "GPL10558", "GPL6947")
+nMG = c(23307,31426,25159)
 
 for (g in 1:length(GPLs)){
   GPLID = GPLs[g]
@@ -829,15 +829,15 @@ for (g in 1:length(GPLs)){
   #2.- LECTURA DE DATOS
   print("Cargando GSEs R data")
   #setwd(paste0("/clinicfs/userhomes/mguaita/Mmu_adipose/",GPLID,"/GEORdata_",GPLID))
-  #setwd(paste0("/clinicfs/userhomes/mguaita/Human/adipose/Automated/",GPLID,"/GEORdata_",GPLID))
-  #wd = getwd()
-  #for (file in list.files(wd)) {load(file)}
+  setwd(paste0("/clinicfs/userhomes/mguaita/Human/adipose/Automated/",GPLID,"/GEORdata_",GPLID))
+  wd = getwd()
+  for (file in list.files(wd)) {load(file)}
   
   
   #setwd("/clinicfs/userhomes/mguaita/Mmu_adipose")
   setwd("/clinicfs/userhomes/mguaita/Human/adipose/Automated")
-  #getwrite_cleanGeneExpressionDF(GPLID, GSEIDs, indicadorMT, adiGSMs)
-  
+  getwrite_cleanGeneExpressionDF(GPLID, GSEIDs, indicadorMT, adiGSMs)
+
   #3. PROCESAMIENTO ESTADISTICO
   # Definimos el parametro a procesar: "CV", "IQRmedian", "MADmedian"
   # La función principal llama al reader de las matrices de expresión anotadas
@@ -851,10 +851,6 @@ for (g in 1:length(GPLs)){
   rm(final_res)
   rm(list=ls(pattern="GSE"))
   rm(adiGSMs,file, GPLID, indicadorMT, nMAXGENES, p, PAR, parametros)
-
+  
 }
-
-
-
-
 
