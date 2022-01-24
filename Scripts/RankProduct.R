@@ -1,3 +1,8 @@
+##############################
+#     RANK PRODUCT SCRIPT    #
+##############################
+
+
 ## LIBRERIAS
 #BiocManager::install("RankProd")
 library(RankProd)
@@ -50,20 +55,20 @@ for (o in 1:length(options)){
         colnames(df_aux)[2] = paste0(option,GPLID)
         if (j == 1) {RP_df = df_aux}
         if (j > 1){
-          if (GPLID =="GPL6244") { # RNA18S = "RNA18SN5"
-            # En la plataforma anterior hemos recogido el gen RNA18S como RNA18S5
-            # Cambiamos el nombre del gen RNA18S en GPL6244 para poder combinarlos en el join
-            # "RNA18SN5"(GPL6244) a "RNA18S" (GPL570)
-            df_aux$X[df_aux$X == "RNA18S5"] <- "RNA18S"
-            #df_aux[29782,1] <- "RNA18S5"
-          }
-          if (GPLID == "GPL10558") { # RNA18S = "RNA18SN5"
-            # En la plataforma anterior hemos recogido el gen RNA18S como RNA18SN5
-            # Cambiamos el nombre del gen RNA18S en GPL10558 para poder combinarlos en el join
-            # "RNA18SN5"(GPL10558) a "RNA18S" (GPL570)
-            df_aux$X[df_aux$X == "RNA18SN5"] <- "RNA18S"
-            #df_aux[29782,1] <- "RNA18S5"
-          }
+          # if (GPLID =="GPL6244") { # RNA18S = "RNA18SN5"
+          #   # En la plataforma anterior hemos recogido el gen RNA18S como RNA18S5
+          #   # Cambiamos el nombre del gen RNA18S en GPL6244 para poder combinarlos en el join
+          #   # "RNA18SN5"(GPL6244) a "RNA18S" (GPL570)
+          #   df_aux$X[df_aux$X == "RNA18S5"] <- "RNA18S"
+          #   #df_aux[29782,1] <- "RNA18S5"
+          # }
+          # if (GPLID == "GPL10558") { # RNA18S = "RNA18SN5"
+          #   # En la plataforma anterior hemos recogido el gen RNA18S como RNA18SN5
+          #   # Cambiamos el nombre del gen RNA18S en GPL10558 para poder combinarlos en el join
+          #   # "RNA18SN5"(GPL10558) a "RNA18S" (GPL570)
+          #   df_aux$X[df_aux$X == "RNA18SN5"] <- "RNA18S"
+          #   #df_aux[29782,1] <- "RNA18S5"
+          # }
           # Unimos los dfs por la columna X (SYMBOL_ID), es un doble join que introduce NAs a ambos lados, 
           # tendremos genes presentes y ausentes en ambos dfs - introducimos NAs para los genes ausentes
           join_df <- merge(RP_df, df_aux, by= "X", all= TRUE) 
@@ -71,14 +76,14 @@ for (o in 1:length(options)){
         }
       }
       # Al finalizar deberiamos tener un df con 41976 genes (41974 si hombres)
-      #dir.create(paste0("inputPR_", option))
-      write.csv(RP_df,paste0("./RankProd/inputPR_",option,"/",SEX,"_",option,"_inputRP_",stat,".csv"), row.names = FALSE)
+      #dir.create(paste0("inputRP_", option))
+      write.csv(RP_df,paste0("./RankProd/inputRP_",option,"/",SEX,"_",option,"_inputRP_",stat,".csv"), row.names = FALSE)
     }
   }  
 }
 
 ## SEGUNDA PARTE: funcion RankProd
-setwd("~/Documentos/TFM/CLUSTER/downloads/RP/RankProd")
+setwd("~/Escritorio/Resultados21/RESULTS/RankProd")
 
 SEXOS = c("ALL", "MALE", "FEMALE")
 stats = c("CV","IQRmedian","MADmedian")
@@ -90,11 +95,11 @@ for (o in 1:length(options)){
     SEX = SEXOS[s]
     for (i in 1:length(stats)){
       stat = stats[i]
-      input_name = paste0("inputPR_median/",SEX,"_median_inputRP_",stat,".csv")
+      input_name = paste0("inputRP_median/",SEX,"_median_inputRP_",stat,".csv")
       # Valor mediano del CV de cada gen en cada plataforma
       input_data <- read.csv(input_name, header = TRUE, stringsAsFactors = FALSE, row.names = 1)
       # Posición de los genes en el ranking de cada plataforma:
-      #input_data <- read.csv("inputPR_ranking/ALL_ranking_inputRP_CV.csv", header = TRUE, stringsAsFactors = FALSE, row.names = 1)
+      #input_data <- read.csv("inputRP_ranking/ALL_ranking_inputRP_CV.csv", header = TRUE, stringsAsFactors = FALSE, row.names = 1)
       
       
       ## Definimos nuestros datos como de una sola clase ("1 condición experimental"),
@@ -124,12 +129,12 @@ for (o in 1:length(options)){
       df_aux$metaRanking <- seq.int(nrow(df_aux))
       df_aux = df_aux[, c(1,7,3)]
       file_name = paste0("RP_",SEX,"_median",stat,".csv")
-      write.csv(df_aux,paste0("inputPR_median/RESULTS2/",file_name), row.names=FALSE)
+      write.csv(df_aux,paste0("./inputRP_median/RESULTS/",file_name), row.names=FALSE)
       
       ### EXPLORACION DE LOS RESULTADOS
-      df_aux2 = df_aux %>% select (Gene, metaRanking, RP) %>% filter(Gene %in% c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19", "RNA18S","RNA18S5", "RNA18SN5"))
+      df_aux2 = df_aux %>% select (Gene, metaRanking, RP) %>% filter(Gene %in% c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19", "RNA18S5"))
       print(df_aux2)
-      write.csv(df_aux2,paste0("inputPR_median/RESULTS2/RP_",SEX,"_median",stat,"_positionHKG.csv"), row.names = FALSE)
+      write.csv(df_aux2,paste0("./inputRP_median/RESULTS/RP_",SEX,"_median",stat,"_positionHKG.csv"), row.names = FALSE)
     }
   }
 }
@@ -215,8 +220,8 @@ for (o in 1:length(options)){
         }
       }
       # Al finalizar deberiamos tener un df con 41976 genes (41974 si hombres)
-      #dir.create(paste0("inputPR_", option))
-      write.csv(RP_df,paste0("./RankProd/inputPR_",option,"/",SEX,"_",option,"_inputRP_",stat,".csv"), row.names = FALSE)
+      dir.create(paste0("inputRP_", option))
+      write.csv(RP_df,paste0("./RankProd/inputRP_",option,"/",SEX,"_",option,"_inputRP_",stat,".csv"), row.names = FALSE)
     }
   }  
 }
@@ -233,11 +238,11 @@ for (o in 1:length(options)){
     SEX = SEXOS[s]
     for (i in 1:length(stats)){
       stat = stats[i]
-      input_name = paste0("inputPR_median/",SEX,"_median_inputRP_",stat,".csv")
+      input_name = paste0("inputRP_median/",SEX,"_median_inputRP_",stat,".csv")
       # Valor mediano del CV de cada gen en cada plataforma
       input_data <- read.csv(input_name, header = TRUE, stringsAsFactors = FALSE, row.names = 1)
       # Posición de los genes en el ranking de cada plataforma:
-      #input_data <- read.csv("inputPR_ranking/ALL_ranking_inputRP_CV.csv", header = TRUE, stringsAsFactors = FALSE, row.names = 1)
+      #input_data <- read.csv("inputRP_ranking/ALL_ranking_inputRP_CV.csv", header = TRUE, stringsAsFactors = FALSE, row.names = 1)
       
       
       ## Definimos nuestros datos como de una sola clase ("1 condición experimental"),
@@ -267,12 +272,12 @@ for (o in 1:length(options)){
       df_aux$metaRanking <- seq.int(nrow(df_aux))
       df_aux = df_aux[, c(1,7,3)]
       file_name = paste0("RP_",SEX,"_median",stat,".csv")
-      write.csv(df_aux,paste0("inputPR_median/RESULTS/",file_name), row.names=TRUE)
+      write.csv(df_aux,paste0("inputRP_median/RESULTS/",file_name), row.names=TRUE)
       
       ### EXPLORACION DE LOS RESULTADOS
-      df_aux2 = df_aux %>% select(Gene, metaRanking, RP) %>% filter(Gene %in% c("Hprt", "Gapdh","Ppia", "Ubc", "Rpl19", "Rn18s"))
+      df_aux2 = df_aux %>% select(Gene, metaRanking, RP) %>% filter(Gene %in% c("Hprt", "Gapdh","Ppia", "Ubc", "Rpl19", "Rps18"))
       print(df_aux2)
-      write.csv(df_aux2,paste0("inputPR_median/RESULTS/RP_",SEX,"_median",stat,"_positionHKG.csv"),row.names = FALSE)
+      write.csv(df_aux2,paste0("inputRP_median/RESULTS/RP_",SEX,"_median",stat,"_positionHKG.csv"),row.names = FALSE)
     }
   }
 }
