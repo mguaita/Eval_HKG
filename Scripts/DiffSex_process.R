@@ -1,3 +1,6 @@
+###################################
+#   MASTER SCRIPT ANALISIS SEXOS  #
+###################################
 #### LIBRERIAS
 library (GEOquery); packageDescription ("GEOquery", fields = "Version") #"2.50.5"
 library(Biobase)
@@ -153,7 +156,7 @@ GSEIDs = df_aux$GSEID
 muestrasSexo = df_aux$muestrasSexo
 maleGSMs = df_aux$MaleGSMs
 femaleGSMs = df_aux$FemaleGSMs
-  
+
 rm(df_aux, query)
 
 
@@ -162,7 +165,7 @@ rm(df_aux, query)
 ####################################
 #Hsa -
 GPLs = c("GPL570", "GPL6244","GPL10558","GPL6947")
-NMGENES = c(22881,23307,31426,25159)
+NMGENES = c(22880,23307,31426,25159)
 #Mmu -
 GPLs = c("GPL1261","GPL6246","GPL6887","GPL6885","GPL16570")
 NMGENES = c(21496,24213,30866,18120,24647)
@@ -216,12 +219,12 @@ for (s in 1:length(SEXOS)){ # Ejecutamos el bucle completo 2 veces, una por cada
           
           # Extraemos las muestras
           sexedGSEdf = get_SexedSamples(GSEdf,sexedGSMs)
-
+          
           n_samples = (dim(sexedGSEdf))[2]
-        
+          
           # GET RES_PAR -  PROCESAMOS SEGUN EL PARAMETRO QUE QUERAMOS CALCULAR:
           res_PAR = get_RESPAR(PAR, GSEID, sexedGSEdf, n_samples)
-         
+          
           # Almacenar FINAL_RES: CONDICIONALES DE CONSTRUCCION DEL RESULTADO FINAL
           ###################################################################################
           # PRIMERA ITERACION: Inicializamos el df final
@@ -262,7 +265,7 @@ for (s in 1:length(SEXOS)){ # Ejecutamos el bucle completo 2 veces, una por cada
             
             # Cambiamos el orden: GSE2 (sin NAs) | GSE1 (con NAs)
           }
-        
+          
           
           # SIGUIENTES ITERACIONES:
           if (n_ProcessedGSEs > 2 && dim(res_PAR)[1] == nMAXGENES) { # Normativo, lo adjuntamos normal
@@ -317,12 +320,10 @@ for (s in 1:length(SEXOS)){ # Ejecutamos el bucle completo 2 veces, una por cada
       ## Acabamos con un directorio "RESULT" con 3*4*2 = 24 ficheros, para cada sexo, las 4 GPLS y los 3 coeficientes
       # ./SEX_GPLID_PAR.csv
     }
-    }
-    
+  }
+  
 }
-    
-    
-    
+
 
 
 
