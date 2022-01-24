@@ -43,19 +43,19 @@ for (i in 1:length(stats)){
   GPL6885 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL6885_",stat,".csv"), header = TRUE, row.names = 1)
   GPL16570 <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/GPL16570_",stat,".csv"), header = TRUE, row.names = 1)
   
-
+  
   ## PARTE 1: RANKING HOUSEKEEPING GENES
   #### PARA LOS VALORES DE LOS HKGS EN TODOS LOS ESTUDIOS:
   ## Extraemos los valores para todos los genes (incluimos excepciones del RNA18S y Ubc):
-  #dir.create(paste0("./RESULTS_",stat,"/HKG"))
- # dir.create(paste0("./RESULTS_",stat,"/",SEX))
+  dir.create(paste0("./RESULTS_",stat,"/HKG"))
+  dir.create(paste0("./RESULTS_",stat,"/",SEX))
   dir.create(paste0("./RESULTS_",stat,"/",SEX,"/HKG"))
   
   GPLs = c("GPL1261", "GPL6246", "GPL6887", "GPL6885", "GPL16570")
   HKGs = c("Hprt", "Gapdh","Ppia", "Ubc", "Rpl19", "Rn18s")
   for (i in 1:length(HKGs)){
     HKG = HKGs[i]
-    if (HKG != "Rn18s" && HKG != "Ubc"){
+    if (HKG != "Rn18s" || HKG != "Ubc"){
       for (j in 1:length(GPLs)){
         GPLID = GPLs[j]
         df = get(GPLID)  
@@ -71,7 +71,7 @@ for (i in 1:length(stats)){
       write.csv(all_HKG_df,paste0("./RESULTS_",stat,"/",SEX,"/HKG/5HKG_",stat,".csv"), row.names = TRUE)
     }
     if (HKG == "Rn18s"){
-      RNA18s_GPLs = c("GPL1261", "GPL6246", "GPL6887")
+      RNA18s_GPLs = c("GPL6246", "GPL6887")
       for (j in 1:length(RNA18s_GPLs)){
         GPLID = RNA18s_GPLs[j]
         df = get(GPLID)  
@@ -85,16 +85,16 @@ for (i in 1:length(stats)){
     if (HKG == "Ubc"){
       Ubc_GPLs = c("GPL1261", "GPL6246", "GPL6885", "GPL16570")
       for (u in 1:length(Ubc_GPLs)){
-          GPLID =  Ubc_GPLs[u]
-          df = get(GPLID)  
-          which(rownames(df) == HKG)
-          df_aux = df[HKG,]
-          if (u == 1){Ubc_df = df_aux}
-          else {Ubc_df = cbind(Ubc_df, df_aux)}
+        GPLID =  Ubc_GPLs[u]
+        df = get(GPLID)  
+        which(rownames(df) == HKG)
+        df_aux = df[HKG,]
+        if (u == 1){Ubc_df = df_aux}
+        else {Ubc_df = cbind(Ubc_df, df_aux)}
       }
       write.csv(Ubc_df,paste0("./RESULTS_",stat,"/",SEX,"/HKG/Ubc_",stat,".csv"), row.names = TRUE)
       
-      }
+    }
   }
   ## Calculamos los valores mediano, medio y sd 
   all_HKG_stats = add_HKGstats(all_HKG_df)
@@ -148,11 +148,11 @@ for (i in 1:length(stats)){
   GPL6885_rank  <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/globalRank/GPL6885_rank",stat,".csv"), header = TRUE )
   GPL16570_rank  <- read.csv(paste0("RESULTS_",stat,"/",SEX,"/globalRank/GPL16570_rank",stat,".csv"), header = TRUE )
   
-
+  
   ### PARTE 3: ¿En qué posición del ranking global se encuentran los HKGs?
   ### BUSCAMOS LAS POSICIONES DE LOS HKG
   GPLs = c("GPL1261", "GPL6246", "GPL6887", "GPL6885", "GPL16570")
-  nGenes = c(21496,24213,30866,18120,24647)
+  nGenes = c(21495,24213,30866,18120,24647)
   #HKGs = c("HPRT1", "GAPDH","PPIA", "UBC", "RPL19")
   for (i in 1:length(GPLs)){
     GPLID = GPLs[i]
